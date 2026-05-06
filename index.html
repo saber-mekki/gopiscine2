@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="GoPiscine SASU — Spécialiste Rénovation Piscine Polyester · Étanchéité · Fibre de verre · Gelcoat · Réparation fissures. Nice et Côte d'Azur.">
+<title>GoPiscine — Spécialiste Rénovation Piscine Polyester · Nice & Côte d'Azur</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+/* INDEX SPECIFIC */
+.impact-band { background:var(--navy-mid);display:grid;grid-template-columns:1fr 1fr; }
+.impact-text { padding:80px 72px;display:flex;flex-direction:column;justify-content:center; }
+.impact-img { position:relative;overflow:hidden;min-height:440px; }
+.impact-img img { width:100%;height:100%;object-fit:cover;display:block; }
+.impact-img::after { content:'';position:absolute;inset:0;background:linear-gradient(to right,rgba(14,31,58,0.25) 0%,transparent 60%); }
+
+.services-wrap { padding:90px 72px;background:var(--off); }
+.section-header { display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:end;margin-bottom:52px; }
+.services-grid { display:grid;grid-template-columns:repeat(3,1fr);gap:3px; }
+
+.full-bg { position:relative;height:440px;overflow:hidden; }
+.full-bg img { width:100%;height:100%;object-fit:cover;filter:brightness(0.5); }
+.full-bg-content { position:absolute;inset:0;display:flex;align-items:center;justify-content:center;flex-direction:column;text-align:center;padding:40px; }
+.full-bg-content h2 { font-family:'Cormorant Garamond',serif;font-size:46px;color:var(--white);font-weight:500;line-height:1.15;margin-bottom:16px; }
+.full-bg-content p { color:rgba(248,246,242,0.75);font-size:16px;max-width:520px;margin-bottom:32px;line-height:1.75; }
+
+/* AVANT/APRÈS */
+.realisations-wrap { padding:90px 72px;background:var(--white); }
+.realisations-grid { display:grid;grid-template-columns:repeat(3,1fr);gap:4px;margin-top:52px; }
+.real-card { overflow:hidden;position:relative;background:var(--navy); }
+.real-img { height:260px;overflow:hidden;position:relative; }
+.real-img img { width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s; }
+.real-card:hover .real-img img { transform:scale(1.05); }
+.real-overlay { position:absolute;inset:0;background:linear-gradient(to top,rgba(7,16,31,0.7) 0%,transparent 55%); }
+.real-info { padding:20px 24px;background:var(--navy-mid); }
+.real-city { font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--azure-light);margin-bottom:4px;font-weight:500; }
+.real-title { font-family:'Cormorant Garamond',serif;font-size:17px;color:var(--white);font-weight:500;margin-bottom:4px; }
+.real-desc { font-size:12px;color:rgba(248,246,242,0.4);line-height:1.5; }
+.real-tag { font-size:11px;color:var(--gold);margin-top:8px;display:block;letter-spacing:.04em; }
+
+/* AVANT/APRÈS COLLAGE */
+.avant-apres-wrap { padding:90px 72px;background:var(--off); }
+.avant-apres-big { position:relative;overflow:hidden;border:3px solid var(--gold); }
+.avant-apres-big img { width:100%;display:block; }
+.avant-apres-label { position:absolute;top:16px;left:50%;transform:translateX(-50%);background:rgba(7,16,31,0.85);border:1px solid rgba(201,169,110,0.3);padding:6px 20px;color:var(--gold);font-size:12px;letter-spacing:.1em;text-transform:uppercase;white-space:nowrap; }
+
+/* PROCESS */
+.process-wrap { background:var(--navy);padding:90px 72px; }
+.process-header { display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:end;margin-bottom:60px; }
+
+/* CIBLE */
+.cible-wrap { background:var(--off);padding:80px 72px;display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center; }
+.cible-box { background:var(--navy-mid);padding:48px;position:relative;overflow:hidden; }
+.cible-box::before { content:'';position:absolute;top:0;left:0;width:3px;height:100%;background:linear-gradient(to bottom,var(--gold),var(--azure-mid)); }
+.cible-quote { font-family:'Cormorant Garamond',serif;font-size:21px;font-style:italic;color:var(--white);line-height:1.5;margin-bottom:16px; }
+.cible-cite { font-size:11px;color:rgba(248,246,242,0.35);letter-spacing:.1em;text-transform:uppercase; }
+
+@media (max-width:1024px) {
+  .impact-band { grid-template-columns:1fr; }
+  .impact-text { padding:60px 24px; }
+  .impact-img { min-height:280px; }
+  .services-wrap,.realisations-wrap,.avant-apres-wrap,.process-wrap { padding:60px 24px; }
+  .section-header,.process-header { grid-template-columns:1fr;gap:16px; }
+  .services-grid { grid-template-columns:1fr 1fr; }
+  .realisations-grid { grid-template-columns:1fr 1fr; }
+  .cible-wrap { grid-template-columns:1fr;padding:60px 24px; }
+}
+@media (max-width:600px) {
+  .services-grid { grid-template-columns:1fr; }
+  .realisations-grid { grid-template-columns:1fr; }
+  .full-bg { height:360px; }
+  .full-bg-content h2 { font-size:30px; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="index.html" class="logo">
+    <svg viewBox="0 0 30 17" fill="none"><path d="M2 11 C6 5,10 5,14 11 C18 17,22 17,26 11 C28 8,29 7,30 8" stroke="#c9a96e" stroke-width="1.5" stroke-linecap="round"/><path d="M1 6 C5 0,9 0,13 6 C17 12,21 12,25 6 C27 3,28 2,30 3" stroke="#48cae4" stroke-width="1" stroke-linecap="round" opacity="0.5"/></svg>
+    Go<span>Piscine</span>
+  </a>
+  <div class="nav-links">
+    <a href="index.html" class="active">Accueil</a>
+    <a href="about.html">À propos</a>
+    <a href="services.html">Services</a>
+    <a href="gallery.html">Galerie</a>
+    <a href="contact.html">Contact</a>
+    <a href="tel:+33615829247" class="nav-phone">+33 06 15 82 92 47</a>
+    <a href="https://wa.me/33615829247" target="_blank" class="nav-wa">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      WhatsApp
+    </a>
+  </div>
+  <button class="nav-toggle" onclick="document.getElementById('navMobile').classList.toggle('open')" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+<div class="nav-mobile" id="navMobile">
+  <a href="index.html">Accueil</a>
+  <a href="about.html">À propos</a>
+  <a href="services.html">Services</a>
+  <a href="gallery.html">Galerie</a>
+  <a href="contact.html">Contact</a>
+  <a href="tel:+33615829247">+33 06 15 82 92 47</a>
+  <a href="https://wa.me/33615829247" class="wa-mobile">💬 WhatsApp</a>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-left">
+    <div class="hero-badge">SASU · Côte d'Azur · 10 ans d'expertise</div>
+    <h1>Spécialiste<br><em>Rénovation Piscine</em><br>Polyester</h1>
+    <div class="hero-specialties">
+      <span class="spec-pill">Étanchéité</span>
+      <span class="spec-pill">Fibre de verre</span>
+      <span class="spec-pill">Gelcoat</span>
+      <span class="spec-pill">Réparation fissures</span>
+      <span class="spec-pill">Rénovation complète</span>
+    </div>
+    <p class="hero-sub">Nice &amp; Côte d'Azur · Alpes-Maritimes (06) &amp; Var (83)<br>Interventions soignées — Résultat garanti et durable</p>
+    <div class="hero-actions">
+      <a href="https://wa.me/33615829247" target="_blank" class="btn btn-wa">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        Devis WhatsApp
+      </a>
+      <a href="tel:+33615829247" class="btn btn-gold">Appeler maintenant</a>
+      <a href="gallery.html" class="btn btn-outline">Avant / Après</a>
+    </div>
+    <div class="hero-stats">
+      <div><div class="stat-num">+10</div><div class="stat-label">Ans SASU</div></div>
+      <div><div class="stat-num">200+</div><div class="stat-label">Piscines rénovées</div></div>
+      <div><div class="stat-num">06 &amp; 83</div><div class="stat-label">Zones couvertes</div></div>
+    </div>
+  </div>
+  <div class="hero-right">
+    <img src="img/p2.jpeg" alt="Piscine rénovée GoPiscine — eau cristalline">
+    <div class="hero-gradient"></div>
+    <div class="hero-float">
+      <div class="hero-float-title">Finition Gelcoat Premium</div>
+      <div class="hero-float-sub">Étanchéité garantie · eau cristalline</div>
+    </div>
+    <div class="hero-badge-corner">
+      <div class="check-circle">✓</div>
+      <div class="badge-text"><strong>Rénovation complète</strong>Polyester + stratification fibre</div>
+    </div>
+  </div>
+</section>
+
+<!-- WAVE -->
+<svg viewBox="0 0 1440 40" fill="none" xmlns="http://www.w3.org/2000/svg" style="background:var(--navy);display:block;">
+  <path d="M0 40L60 32C120 24 240 8 360 4C480 0 600 8 720 16C840 24 960 28 1080 24C1200 20 1320 8 1380 4L1440 0V40H0Z" fill="#f0ede6"/>
+</svg>
+
+<!-- IMPACT -->
+<section class="impact-band">
+  <div class="impact-text">
+    <div class="section-tag gold">Nos réalisations parlent</div>
+    <h2 class="display white">Vos vraies photos —<br>nos vrais <em>chantiers</em></h2>
+    <p class="lead white">Chaque photo que vous voyez sur ce site est un vrai chantier réalisé par GoPiscine. Pas de stock photos — que du travail réel, sur la Côte d'Azur.</p>
+    <div class="quote-block">
+      <blockquote>"Résultat au-delà de nos attentes. Piscine comme neuve, eau cristalline."</blockquote>
+      <cite>Client · Cannes, 2024</cite>
+    </div>
+  </div>
+  <div class="impact-img">
+    <img src="img/p1.jpeg" alt="Réalisation GoPiscine — piscine eau turquoise">
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="services-wrap">
+  <div class="section-header">
+    <div>
+      <div class="section-tag">Expertise technique</div>
+      <h2 class="display">Ce que nous<br>maîtrisons parfaitement</h2>
+    </div>
+    <p class="lead">Pas de généraliste, pas de sous-traitant. Chaque intervention est réalisée directement par notre équipe spécialisée polyester.</p>
+  </div>
+  <div class="services-grid">
+    <div class="card card-accent">
+      <div class="card-img" style="height:190px"><img src="https://www.gopiscine.fr/assets/images/resource/service-4.jpg" alt="Osmose"><div class="card-img-overlay"></div></div>
+      <div class="card-body"><div class="card-title">Traitement Osmose</div><div class="card-desc">Élimination des cloques, assèchement complet, reprise vinylester. Résultat définitif.</div></div>
+    </div>
+    <div class="card card-accent">
+      <div class="card-img" style="height:190px"><img src="https://www.gopiscine.fr/assets/images/resource/service-3.jpg" alt="Fissures"><div class="card-img-overlay"></div></div>
+      <div class="card-body"><div class="card-title">Réparation Fissures</div><div class="card-desc">Saignée, comblement fibré, ponçage niveau. Étanchéité structurelle garantie.</div></div>
+    </div>
+    <div class="card card-accent">
+      <div class="card-img" style="height:190px"><img src="https://www.gopiscine.fr/assets/images/resource/service-1.jpg" alt="Polyester"><div class="card-img-overlay"></div></div>
+      <div class="card-body"><div class="card-title">Rénovation Polyester</div><div class="card-desc">Stratification fibre 600g + gelcoat topcoat. Sur béton, mosaïque, liner, époxy.</div></div>
+    </div>
+    <div class="card card-accent">
+      <div class="card-img" style="height:190px"><img src="https://www.gopiscine.fr/assets/images/resource/service-10.jpg" alt="Étanchéité"><div class="card-img-overlay"></div></div>
+      <div class="card-body"><div class="card-title">Étanchéité Complète</div><div class="card-desc">Système 6 couches vinylester + fibre + gelcoat. Finition miroir résistante UV.</div></div>
+    </div>
+    <div class="card card-accent">
+      <div class="card-img" style="height:190px"><img src="https://www.gopiscine.fr/assets/images/resource/service-8.jpg" alt="Fuites"><div class="card-img-overlay"></div></div>
+      <div class="card-body"><div class="card-title">Réparation Fuites</div><div class="card-desc">Détection précise et réparation définitive. Skimmer, paroi, bonde de fond.</div></div>
+    </div>
+    <div class="card card-accent">
+      <div class="card-img" style="height:190px"><img src="https://www.gopiscine.fr/assets/images/resource/service-2.jpg" alt="Modification"><div class="card-img-overlay"></div></div>
+      <div class="card-body"><div class="card-title">Modification &amp; Escaliers</div><div class="card-desc">Réduction profondeur, escaliers intégrés, banquettes. Sur-mesure avec reprise étanchéité.</div></div>
+    </div>
+  </div>
+  <div style="text-align:center;margin-top:40px;">
+    <a href="services.html" class="btn btn-water">Voir tous nos services →</a>
+  </div>
+</section>
+
+<!-- GRANDE IMAGE -->
+<div class="full-bg">
+  <img src="img/p5.jpeg" alt="Réalisation GoPiscine Côte d'Azur">
+  <div class="full-bg-content">
+    <h2>Votre bassin mérite<br>une vraie expertise</h2>
+    <p>Rénovation complète bassin béton · Étanchéité polyester · Finition gelcoat<br>Interventions sur Nice, Cannes, Antibes, Monaco, Var</p>
+    <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;">
+      <a href="https://wa.me/33615829247" target="_blank" class="btn btn-wa">Devis WhatsApp gratuit</a>
+      <a href="gallery.html" class="btn btn-outline">Voir nos réalisations</a>
+    </div>
+  </div>
+</div>
+
+<!-- RÉALISATIONS AVANT/APRÈS -->
+<section class="realisations-wrap">
+  <div class="section-header">
+    <div>
+      <div class="section-tag">Nos chantiers réels</div>
+      <h2 class="display">Avant / Après —<br>nos vraies <em>photos</em></h2>
+    </div>
+    <p class="lead">Toutes ces photos sont nos vrais chantiers. Pas de retouche, pas de stock photo — le travail réel de GoPiscine.</p>
+  </div>
+  <div class="realisations-grid">
+    <div class="real-card">
+      <div class="real-img"><img src="img/p8.jpeg" alt="Avant Après GoPiscine"><div class="real-overlay"></div></div>
+      <div class="real-info">
+        <div class="real-city">Côte d'Azur · Avant / Après</div>
+        <div class="real-title">Rénovation polyester complète</div>
+        <div class="real-desc">Bassin vert dégradé → eau cristalline, finition lisse</div>
+        <span class="real-tag">↗ Résultat garanti</span>
+      </div>
+    </div>
+    <div class="real-card">
+      <div class="real-img"><img src="img/p7.jpeg" alt="Réalisation Nice"><div class="real-overlay"></div></div>
+      <div class="real-info">
+        <div class="real-city">Côte d'Azur · Avant / Après</div>
+        <div class="real-title">Traitement osmose + gelcoat</div>
+        <div class="real-desc">Rénovation structurelle totale, eau bleue cristalline</div>
+        <span class="real-tag">↗ Finition gelcoat premium</span>
+      </div>
+    </div>
+    <div class="real-card">
+      <div class="real-img"><img src="img/p6.jpeg" alt="Réalisation Var"><div class="real-overlay"></div></div>
+      <div class="real-info">
+        <div class="real-city">Var (83) · Rénovation</div>
+        <div class="real-title">Rénovation bassin béton</div>
+        <div class="real-desc">Nouvelle piscine rénov. polyester avec escaliers intégrés</div>
+        <span class="real-tag">↗ Sur-mesure client</span>
+      </div>
+    </div>
+    <div class="real-card">
+      <div class="real-img"><img src="img/p3.jpeg" alt="Gelcoat gris"><div class="real-overlay"></div></div>
+      <div class="real-info">
+        <div class="real-city">Alpes-Maritimes (06)</div>
+        <div class="real-title">Finition gelcoat gris anthracite</div>
+        <div class="real-desc">Stratification fibre + gelcoat couleur sur mesure</div>
+        <span class="real-tag">↗ Couleur sur demande</span>
+      </div>
+    </div>
+    <div class="real-card">
+      <div class="real-img"><img src="img/p4.jpeg" alt="Avant rénovation"><div class="real-overlay"></div></div>
+      <div class="real-info">
+        <div class="real-city">Côte d'Azur · État initial</div>
+        <div class="real-title">Bassin dégradé — diagnostic</div>
+        <div class="real-desc">Décollement, infiltrations, osmose avancée → pris en charge</div>
+        <span class="real-tag">↗ Diagnostic gratuit</span>
+      </div>
+    </div>
+    <div class="real-card">
+      <div class="real-img"><img src="img/p5.jpeg" alt="Villa rénovée"><div class="real-overlay"></div></div>
+      <div class="real-info">
+        <div class="real-city">Nice · Villa provençale</div>
+        <div class="real-title">Rénovation villa haut de gamme</div>
+        <div class="real-desc">Bassin de caractère rénové — finition eau turquoise</div>
+        <span class="real-tag">↗ Haut de gamme</span>
+      </div>
+    </div>
+  </div>
+  <div style="text-align:center;margin-top:40px;">
+    <a href="gallery.html" class="btn btn-water">Voir toute la galerie →</a>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="process-wrap">
+  <div class="process-header">
+    <div>
+      <div class="section-tag gold">Notre méthode</div>
+      <h2 class="display white">6 étapes qui font<br><em>la différence</em></h2>
+    </div>
+    <p class="lead white">Ce protocole précis est appliqué sur chaque chantier. Sans raccourci. C'est ce qui garantit que votre piscine tient 15 à 20 ans.</p>
+  </div>
+  <div class="process-line">
+    <div class="process-item"><div class="process-num">1</div><div class="process-title">Diagnostic précis</div><div class="process-desc">Inspection osmose, fissures, étanchéité. Gratuit et sans engagement.</div></div>
+    <div class="process-item"><div class="process-num">2</div><div class="process-title">Préparation totale</div><div class="process-desc">Ponçage mécanique + acétone. Base parfaite = résultat durable.</div></div>
+    <div class="process-item"><div class="process-num">3</div><div class="process-title">Vinylester accrochage</div><div class="process-desc">Résine haute perf., barrière anti-osmose définitive.</div></div>
+    <div class="process-item"><div class="process-num">4</div><div class="process-title">Fibre de verre 600g</div><div class="process-desc">Couches croisées, résistance mécanique maximale.</div></div>
+    <div class="process-item"><div class="process-num">5</div><div class="process-title">Gelcoat + topcoat UV</div><div class="process-desc">Finition miroir poncée. Résistance UV et produits chimiques.</div></div>
+    <div class="process-item"><div class="process-num">6</div><div class="process-title">Contrôle + remise en eau</div><div class="process-desc">Vérification complète avant validation finale.</div></div>
+  </div>
+</section>
+
+<!-- CIBLE -->
+<section class="cible-wrap">
+  <div>
+    <div class="section-tag">Clientèle sérieuse uniquement</div>
+    <h2 class="display">Nous travaillons pour<br>des clients <em>exigeants</em></h2>
+    <p class="lead">Nous intervenons sur des projets de rénovation complète nécessitant une solution durable et professionnelle.<br><br>Si vous cherchez le moins cher — nous ne sommes pas pour vous.<br>Si vous voulez que ce soit fait une bonne fois pour toutes — appelez-nous.</p>
+    <div style="margin-top:32px;display:flex;gap:12px;flex-wrap:wrap;">
+      <a href="https://wa.me/33615829247" target="_blank" class="btn btn-wa">Devis WhatsApp</a>
+      <a href="contact.html" class="btn btn-gold">Demander un devis</a>
+    </div>
+  </div>
+  <div class="cible-box">
+    <div class="cible-quote">"Pas le moins cher — le plus fiable. Votre piscine sera rénovée une bonne fois pour toutes."</div>
+    <div class="cible-cite">GoPiscine SASU · Côte d'Azur depuis 2014</div>
+  </div>
+</section>
+
+<!-- URGENCE -->
+<div class="urgence-band">
+  <div>
+    <div class="urgence-band-tag">Saison 2025 — créneaux limités</div>
+    <h2>Planning complet rapidement<br>en haute saison</h2>
+    <p>Contactez-nous maintenant pour sécuriser votre date avant l'été.</p>
+  </div>
+  <div style="display:flex;gap:12px;flex-wrap:wrap;">
+    <a href="https://wa.me/33615829247" target="_blank" class="btn btn-wa">WhatsApp →</a>
+    <a href="tel:+33615829247" class="btn btn-navy">Appeler →</a>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <a href="index.html" class="logo">Go<span>Piscine</span></a>
+      <p>SASU spécialiste rénovation piscines polyester. Nice &amp; Côte d'Azur depuis 2014. Étanchéité · Fibre · Gelcoat · Fissures.</p>
+    </div>
+    <div class="footer-col"><h4>Navigation</h4><a href="index.html">Accueil</a><a href="about.html">À propos</a><a href="services.html">Services</a><a href="gallery.html">Galerie</a><a href="contact.html">Contact</a></div>
+    <div class="footer-col"><h4>Spécialités</h4><a href="services.html">Rénovation polyester</a><a href="services.html">Traitement osmose</a><a href="services.html">Réparation fissures</a><a href="services.html">Étanchéité bassin</a><a href="services.html">Réparation fuites</a></div>
+    <div class="footer-col"><h4>Contact direct</h4><a href="tel:+33615829247">+33 06 15 82 92 47</a><a href="https://wa.me/33615829247">WhatsApp</a><a href="mailto:saber.mekki6@gmail.com">saber.mekki6@gmail.com</a><p>11 Rue Eugène Coste · Nice</p><p>Alpes-Maritimes (06) &amp; Var (83)</p></div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2025 GoPiscine SASU — Tous droits réservés</p>
+    <p>Rénovation polyester piscines · Nice · Côte d'Azur</p>
+  </div>
+</footer>
+
+</body>
+</html>

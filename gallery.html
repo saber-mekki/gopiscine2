@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Galerie GoPiscine — Réalisations avant/après piscines rénovées sur la Côte d'Azur.">
+<title>Galerie Avant/Après — GoPiscine · Réalisations Piscines</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+.gallery-wrap { padding:80px 72px 100px;background:var(--white); }
+.masonry { columns:3;column-gap:4px; }
+.masonry-item { break-inside:avoid;margin-bottom:4px;overflow:hidden;position:relative;cursor:pointer; }
+.masonry-item img { width:100%;display:block;transition:transform .5s;filter:brightness(.9); }
+.masonry-item:hover img { transform:scale(1.04);filter:brightness(1); }
+.masonry-overlay { position:absolute;inset:0;background:linear-gradient(to top,rgba(7,16,31,.65) 0%,transparent 50%);opacity:0;transition:opacity .3s;display:flex;align-items:flex-end;padding:18px; }
+.masonry-item:hover .masonry-overlay { opacity:1; }
+.masonry-label { font-family:'Cormorant Garamond',serif;color:var(--white);font-size:15px;font-weight:500; }
+.masonry-city { font-size:10px;color:var(--gold);letter-spacing:.08em;text-transform:uppercase;display:block;margin-bottom:2px; }
+
+/* AVANT APRES SPECIAL */
+.avant-apres-section { background:var(--off);padding:80px 72px; }
+.aa-grid { display:grid;grid-template-columns:1fr 1fr;gap:4px;margin-top:52px; }
+.aa-card { position:relative;overflow:hidden; }
+.aa-card img { width:100%;display:block;height:340px;object-fit:cover;transition:transform .5s; }
+.aa-card:hover img { transform:scale(1.04); }
+.aa-label { position:absolute;top:16px;left:16px;background:rgba(7,16,31,.88);border:1px solid rgba(201,169,110,.3);padding:6px 16px;color:var(--gold);font-size:12px;letter-spacing:.1em;text-transform:uppercase; }
+.aa-info { position:absolute;bottom:0;left:0;right:0;background:linear-gradient(to top,rgba(7,16,31,.9) 0%,transparent 100%);padding:24px 20px 16px; }
+.aa-info-title { font-family:'Cormorant Garamond',serif;color:var(--white);font-size:16px;font-weight:500;margin-bottom:3px; }
+.aa-info-sub { font-size:12px;color:rgba(248,246,242,.5); }
+
+.stats-band { background:var(--navy-mid);padding:64px 72px;display:grid;grid-template-columns:repeat(4,1fr);gap:2px; }
+.stat-box { text-align:center;padding:28px 20px;border-right:1px solid rgba(201,169,110,.08); }
+.stat-box:last-child { border-right:none; }
+.stat-box-num { font-family:'Cormorant Garamond',serif;font-size:48px;color:var(--gold);font-weight:500;line-height:1;margin-bottom:6px; }
+.stat-box-label { font-size:11px;color:rgba(248,246,242,.4);text-transform:uppercase;letter-spacing:.1em; }
+
+.lightbox { display:none;position:fixed;inset:0;background:rgba(7,16,31,.95);z-index:999;align-items:center;justify-content:center;padding:32px; }
+.lightbox.open { display:flex; }
+.lightbox img { max-width:90vw;max-height:85vh;object-fit:contain; }
+.lightbox-close { position:absolute;top:20px;right:28px;color:rgba(248,246,242,.6);font-size:32px;cursor:pointer;background:none;border:none;transition:color .2s; }
+.lightbox-close:hover { color:var(--gold); }
+
+@media (max-width:960px) {
+  .gallery-wrap,.avant-apres-section { padding:60px 24px; }
+  .masonry { columns:2; }
+  .aa-grid { grid-template-columns:1fr; }
+  .stats-band { grid-template-columns:1fr 1fr;padding:48px 24px; }
+}
+@media (max-width:580px) { .masonry { columns:1; } }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="logo">
+    <svg viewBox="0 0 30 17" fill="none"><path d="M2 11 C6 5,10 5,14 11 C18 17,22 17,26 11 C28 8,29 7,30 8" stroke="#c9a96e" stroke-width="1.5" stroke-linecap="round"/><path d="M1 6 C5 0,9 0,13 6 C17 12,21 12,25 6 C27 3,28 2,30 3" stroke="#48cae4" stroke-width="1" stroke-linecap="round" opacity="0.5"/></svg>
+    Go<span>Piscine</span>
+  </a>
+  <div class="nav-links">
+    <a href="index.html">Accueil</a><a href="about.html">À propos</a><a href="services.html">Services</a>
+    <a href="gallery.html" class="active">Galerie</a><a href="contact.html">Contact</a>
+    <a href="tel:+33615829247" class="nav-phone">+33 06 15 82 92 47</a>
+    <a href="https://wa.me/33615829247" target="_blank" class="nav-wa"><svg width="14" height="14" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>WhatsApp</a>
+  </div>
+  <button class="nav-toggle" onclick="document.getElementById('nm').classList.toggle('open')" aria-label="Menu"><span></span><span></span><span></span></button>
+</nav>
+<div class="nav-mobile" id="nm">
+  <a href="index.html">Accueil</a><a href="about.html">À propos</a><a href="services.html">Services</a>
+  <a href="gallery.html">Galerie</a><a href="contact.html">Contact</a>
+  <a href="tel:+33615829247">+33 06 15 82 92 47</a>
+  <a href="https://wa.me/33615829247" class="wa-mobile">💬 WhatsApp</a>
+</div>
+
+<!-- HERO -->
+<div class="page-hero">
+  <img src="img/p1.jpeg" alt="GoPiscine réalisations">
+  <div class="page-hero-overlay"></div>
+  <div class="page-hero-shimmer"></div>
+  <div class="page-hero-content">
+    <div class="page-hero-badge">Nos vrais chantiers · Pas de stock photos</div>
+    <h1>Nos <em>réalisations</em></h1>
+    <p class="page-hero-sub">Avant / Après · Nice · Cannes · Antibes · Var</p>
+    <div class="breadcrumb"><a href="index.html">Accueil</a><span>›</span><span>Galerie</span></div>
+  </div>
+  <svg class="page-hero-wave" viewBox="0 0 1440 50" fill="none"><path d="M0 50L60 40C120 30 240 10 360 6C480 2 600 14 720 22C840 30 960 34 1080 30C1200 26 1320 14 1380 8L1440 4V50H0Z" fill="white"/></svg>
+</div>
+
+<!-- AVANT/APRÈS SECTION VEDETTE -->
+<section class="avant-apres-section">
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:end;margin-bottom:0">
+    <div>
+      <div class="section-tag">La preuve</div>
+      <h2 class="display">Avant / Après —<br>nos vrais <em>chantiers</em></h2>
+    </div>
+    <p class="lead">Toutes ces photos sont prises directement sur nos chantiers. Voici ce que nous faisons concrètement.</p>
+  </div>
+  <div class="aa-grid">
+    <div class="aa-card" onclick="openLB(this)">
+      <img src="img/p8.jpeg" alt="Avant Après piscine">
+      <div class="aa-label">Avant / Après</div>
+      <div class="aa-info"><div class="aa-info-title">Rénovation polyester complète</div><div class="aa-info-sub">Bassin dégradé → eau cristalline</div></div>
+    </div>
+    <div class="aa-card" onclick="openLB(this)">
+      <img src="img/p7.jpeg" alt="Avant Après piscine 2">
+      <div class="aa-label">Avant / Après</div>
+      <div class="aa-info"><div class="aa-info-title">Traitement osmose + gelcoat</div><div class="aa-info-sub">Rénovation structurelle totale</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- GALERIE MASONRY -->
+<section class="gallery-wrap">
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:end;margin-bottom:48px">
+    <div><div class="section-tag">Tous nos chantiers</div><h2 class="display">Galerie complète</h2></div>
+    <p class="lead">Cliquez sur une photo pour l'agrandir.</p>
+  </div>
+  <div class="masonry" id="gallery">
+    <div class="masonry-item" onclick="openLB(this)">
+      <img src="img/p1.jpeg" alt="Piscine eau turquoise">
+      <div class="masonry-overlay"><div><span class="masonry-city">Côte d'Azur</span><div class="masonry-label">Rénovation polyester — eau turquoise</div></div></div>
+    </div>
+    <div class="masonry-item" onclick="openLB(this)">
+      <img src="img/p2.jpeg" alt="Piscine eau cristalline">
+      <div class="masonry-overlay"><div><span class="masonry-city">Alpes-Maritimes (06)</span><div class="masonry-label">Finition gelcoat — résultat premium</div></div></div>
+    </div>
+    <div class="masonry-item" onclick="openLB(this)">
+      <img src="img/p3.jpeg" alt="Gelcoat gris anthracite">
+      <div class="masonry-overlay"><div><span class="masonry-city">Côte d'Azur</span><div class="masonry-label">Gelcoat gris anthracite sur mesure</div></div></div>
+    </div>
+    <div class="masonry-item" onclick="openLB(this)">
+      <img src="img/p4.jpeg" alt="Bassin avant rénovation">
+      <div class="masonry-overlay"><div><span class="masonry-city">Diagnostic · État initial</span><div class="masonry-label">Bassin dégradé — avant intervention</div></div></div>
+    </div>
+    <div class="masonry-item" onclick="openLB(this)">
+      <img src="img/p5.jpeg" alt="Villa provençale piscine">
+      <div class="masonry-overlay"><div><span class="masonry-city">Nice · Villa provençale</span><div class="masonry-label">Rénovation haut de gamme</div></div></div>
+    </div>
+    <div class="masonry-item" onclick="openLB(this)">
+      <img src="img/p6.jpeg" alt="Petite piscine rénovée">
+      <div class="masonry-overlay"><div><span class="masonry-city">Var (83)</span><div class="masonry-label">Rénovation bassin compact avec escaliers</div></div></div>
+    </div>
+    <div class="masonry-item" onclick="openLB(this)">
+      <img src="https://www.gopiscine.fr/assets/images/gallery/gallery-1.jpg" alt="Réalisation GoPiscine">
+      <div class="masonry-overlay"><div><span class="masonry-city">Côte d'Azur</span><div class="masonry-label">Étanchéité complète du bassin</div></div></div>
+    </div>
+    <div class="masonry-item" onclick="openLB(this)">
+      <img src="https://www.gopiscine.fr/assets/images/gallery/gallery-2.jpg" alt="Réalisation Cannes">
+      <div class="masonry-overlay"><div><span class="masonry-city">Cannes</span><div class="masonry-label">Réparation fissures structurelles</div></div></div>
+    </div>
+    <div class="masonry-item" onclick="openLB(this)">
+      <img src="https://www.gopiscine.fr/assets/images/gallery/gallery-3.jpg" alt="Réalisation Antibes">
+      <div class="masonry-overlay"><div><span class="masonry-city">Antibes</span><div class="masonry-label">Stratification fibre de verre 600g</div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<div class="stats-band">
+  <div class="stat-box"><div class="stat-box-num">200+</div><div class="stat-box-label">Piscines rénovées</div></div>
+  <div class="stat-box"><div class="stat-box-num">+10</div><div class="stat-box-label">Ans d'expertise</div></div>
+  <div class="stat-box"><div class="stat-box-num">100%</div><div class="stat-box-label">Garantie finition</div></div>
+  <div class="stat-box"><div class="stat-box-num">06 &amp; 83</div><div class="stat-box-label">Départements</div></div>
+</div>
+
+<div class="urgence-band">
+  <div>
+    <div class="urgence-band-tag">Saison 2025 — créneaux limités</div>
+    <h2>Votre piscine peut être<br>la prochaine réalisation</h2>
+    <p>Devis gratuit — réponse sous 24h.</p>
+  </div>
+  <div style="display:flex;gap:12px;flex-wrap:wrap;">
+    <a href="https://wa.me/33615829247" target="_blank" class="btn btn-wa">WhatsApp →</a>
+    <a href="contact.html" class="btn btn-navy">Demander un devis →</a>
+  </div>
+</div>
+
+<div class="lightbox" id="lb" onclick="closeLB()">
+  <button class="lightbox-close" onclick="closeLB()">✕</button>
+  <img id="lb-img" src="" alt="">
+</div>
+
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand"><a href="index.html" class="logo">Go<span>Piscine</span></a><p>SASU spécialiste rénovation piscines polyester. Nice &amp; Côte d'Azur depuis 2014.</p></div>
+    <div class="footer-col"><h4>Navigation</h4><a href="index.html">Accueil</a><a href="about.html">À propos</a><a href="services.html">Services</a><a href="gallery.html">Galerie</a><a href="contact.html">Contact</a></div>
+    <div class="footer-col"><h4>Spécialités</h4><a href="services.html">Rénovation polyester</a><a href="services.html">Traitement osmose</a><a href="services.html">Réparation fissures</a><a href="services.html">Étanchéité bassin</a></div>
+    <div class="footer-col"><h4>Contact</h4><a href="tel:+33615829247">+33 06 15 82 92 47</a><a href="https://wa.me/33615829247">WhatsApp</a><a href="mailto:saber.mekki6@gmail.com">saber.mekki6@gmail.com</a><p>11 Rue Eugène Coste · Nice</p></div>
+  </div>
+  <div class="footer-bottom"><p>© 2025 GoPiscine SASU</p><p>Rénovation polyester piscines · Côte d'Azur</p></div>
+</footer>
+
+<script>
+function openLB(el){var img=el.querySelector('img');document.getElementById('lb-img').src=img.src;document.getElementById('lb').classList.add('open');document.body.style.overflow='hidden';}
+function closeLB(){document.getElementById('lb').classList.remove('open');document.body.style.overflow='';}
+document.addEventListener('keydown',function(e){if(e.key==='Escape')closeLB();});
+</script>
+</body>
+</html>
