@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Services GoPiscine — Revêtement polyester, traitement osmose, réparation fissures, étanchéité bassin, réparation fuites. Nice et Côte d'Azur.">
+<title>Services — GoPiscine · Rénovation Piscines Nice</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+/* ── HERO COVER FULL IMAGE ── */
+.services-hero {
+  position: relative;
+  height: 520px;
+  overflow: hidden;
+}
+.services-hero img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  display: block;
+  filter: brightness(0.55);
+}
+.services-hero-overlay {
+  position: absolute; inset: 0;
+  background:
+    linear-gradient(to right, rgba(7,16,31,0.6) 0%, rgba(7,16,31,0.2) 60%, transparent 100%),
+    linear-gradient(to top, rgba(7,16,31,0.4) 0%, transparent 50%);
+}
+/* Water shimmer lines on hero */
+.services-hero-shimmer {
+  position: absolute; inset: 0;
+  background:
+    repeating-linear-gradient(
+      180deg,
+      transparent 0px,
+      transparent 38px,
+      rgba(72,202,228,0.03) 38px,
+      rgba(72,202,228,0.03) 40px
+    );
+  pointer-events: none;
+}
+.services-hero-content {
+  position: absolute; inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 64px 80px;
+  z-index: 2;
+}
+.services-hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(201,169,110,0.15);
+  border: 1px solid rgba(201,169,110,0.3);
+  color: var(--gold);
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  padding: 7px 16px;
+  margin-bottom: 20px;
+  width: fit-content;
+}
+.services-hero-badge::before {
+  content: '';
+  width: 6px; height: 6px;
+  background: var(--azure-light);
+  border-radius: 50%;
+}
+.services-hero h1 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 58px;
+  font-weight: 500;
+  color: var(--white);
+  line-height: 1.08;
+  margin-bottom: 16px;
+}
+.services-hero h1 em { font-style: italic; color: var(--gold); }
+.services-hero-sub {
+  font-size: 14px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(248,246,242,0.5);
+  margin-bottom: 20px;
+}
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  color: rgba(248,246,242,0.4);
+  letter-spacing: 0.05em;
+}
+.breadcrumb a { color: var(--gold); text-decoration: none; }
+.breadcrumb span { color: rgba(248,246,242,0.25); }
+
+/* Wave bottom of hero */
+.hero-wave {
+  position: absolute;
+  bottom: -2px; left: 0; right: 0;
+  z-index: 3;
+}
+
+/* ── REST ── */
+.services-intro {
+  background: var(--off);
+  padding: 96px 80px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+.services-full-grid {
+  padding: 0 80px 100px;
+  background: var(--off);
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3px;
+}
+.svc-card {
+  background: var(--white);
+  overflow: hidden;
+  position: relative;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.svc-card:hover { transform: translateY(-4px); box-shadow: 0 16px 48px rgba(0,119,182,0.1); }
+.svc-card-img { height: 220px; overflow: hidden; position: relative; }
+.svc-card-img img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.5s; }
+.svc-card:hover .svc-card-img img { transform: scale(1.06); }
+.svc-card-img-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(7,16,31,0.5) 0%, transparent 55%); }
+.svc-card-num { position: absolute; bottom: 14px; left: 20px; font-family: 'Cormorant Garamond', serif; font-size: 13px; color: rgba(248,246,242,0.6); letter-spacing: 0.06em; z-index: 2; }
+.svc-card-body { padding: 28px 32px 32px; border-top: 3px solid var(--azure-mid); transition: border-color 0.2s; }
+.svc-card:hover .svc-card-body { border-top-color: var(--gold); }
+.svc-card-title { font-family: 'Cormorant Garamond', serif; font-size: 22px; font-weight: 500; color: var(--text); margin-bottom: 10px; line-height: 1.25; }
+.svc-card-desc { font-size: 13px; color: var(--muted); line-height: 1.7; margin-bottom: 18px; }
+.svc-tag { font-size: 11px; color: var(--azure-mid); letter-spacing: 0.07em; font-weight: 500; text-transform: uppercase; }
+
+.process-wrap { background: var(--navy); padding: 100px 80px; }
+
+.why-grid { background: var(--white); padding: 100px 80px; display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+.why-list { margin-top: 28px; }
+.why-item { display: flex; gap: 20px; padding: 20px 0; border-bottom: 1px solid rgba(0,0,0,0.05); align-items: flex-start; }
+.why-item:last-child { border-bottom: none; }
+.why-num { font-family: 'Cormorant Garamond', serif; font-size: 28px; color: var(--azure-light); font-weight: 500; line-height: 1; flex-shrink: 0; width: 36px; opacity: 0.5; }
+.why-item-title { font-weight: 500; color: var(--text); margin-bottom: 4px; font-size: 15px; }
+.why-item-desc { font-size: 13px; color: var(--muted); line-height: 1.6; }
+.why-img { position: relative; overflow: hidden; }
+.why-img img { width: 100%; height: 420px; object-fit: cover; display: block; }
+.why-img::after { content: ''; position: absolute; inset: 0; background: linear-gradient(135deg, rgba(0,119,182,0.15) 0%, transparent 60%); }
+
+@media (max-width: 960px) {
+  .services-hero { height: 380px; }
+  .services-hero-content { padding: 40px 24px; }
+  .services-hero h1 { font-size: 36px; }
+  .services-intro { grid-template-columns: 1fr; padding: 60px 24px; }
+  .services-full-grid { padding: 0 24px 60px; grid-template-columns: 1fr; }
+  .process-wrap { padding: 60px 24px; }
+  .why-grid { grid-template-columns: 1fr; padding: 60px 24px; gap: 40px; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="index.html" class="logo">
+    <svg class="logo-wave" viewBox="0 0 32 18" fill="none"><path d="M2 12 C6 6, 10 6, 14 12 C18 18, 22 18, 26 12 C28 9, 30 8, 31 9" stroke="#c9a96e" stroke-width="1.5" fill="none" stroke-linecap="round"/><path d="M1 7 C5 1, 9 1, 13 7 C17 13, 21 13, 25 7 C27 4, 29 3, 31 4" stroke="#48cae4" stroke-width="1" fill="none" stroke-linecap="round" opacity="0.5"/></svg>
+    Go<span>Piscine</span>
+  </a>
+  <div class="nav-links">
+    <a href="index.html">Accueil</a>
+    <a href="about.html">À propos</a>
+    <a href="services.html" class="active">Services</a>
+    <a href="gallery.html">Galerie</a>
+    <a href="contact.html">Contact</a>
+    <a href="tel:+33615829247" class="nav-phone">+33 06 15 82 92 47</a>
+    <a href="tel:+33615829247" class="nav-cta btn">Réserver mon créneau</a>
+  </div>
+</nav>
+
+<!-- HERO COVER AVEC VRAIE PHOTO -->
+<div class="services-hero">
+  <img src="https://www.gopiscine.fr/assets/images/resource/piscineHome.jpg" alt="Piscine GoPiscine Côte d'Azur">
+  <div class="services-hero-overlay"></div>
+  <div class="services-hero-shimmer"></div>
+  <div class="services-hero-content">
+    <div class="services-hero-badge">Spécialiste Côte d'Azur · 10 ans d'expertise</div>
+    <h1>Nos <em>services</em></h1>
+    <p class="services-hero-sub">Rénovation technique haut de gamme · Côte d'Azur</p>
+    <div class="breadcrumb">
+      <a href="index.html">Accueil</a>
+      <span>›</span>
+      <span>Services</span>
+    </div>
+  </div>
+  <svg class="hero-wave" viewBox="0 0 1440 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0 60L48 50C96 40 192 20 288 15C384 10 480 20 576 28C672 36 768 40 864 36C960 32 1056 20 1152 14C1248 8 1344 8 1392 10L1440 12V60H0Z" fill="#f0ede6"/>
+  </svg>
+</div>
+
+<!-- INTRO -->
+<section class="services-intro">
+  <div>
+    <div class="section-tag">Expertise technique</div>
+    <h2 class="display">Des interventions<br>soignées, des résultats<br><em>durables</em></h2>
+    <p class="lead">Chaque service est réalisé avec un protocole rigoureux, des matériaux professionnels et un niveau d'exigence qui vous garantit un résultat qui dure — pas une réparation qui tiendra 2 ans.</p>
+  </div>
+  <div>
+    <div class="pool-tile" style="margin-bottom:3px">
+      <div class="pool-tile-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+      <h3>Garantie écrite sur chaque intervention</h3>
+      <p>Nous nous engageons par écrit sur la qualité de notre travail.</p>
+    </div>
+    <div class="pool-tile">
+      <div class="pool-tile-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="20 6 9 17 4 12"/></svg></div>
+      <h3>Matériaux professionnels uniquement</h3>
+      <p>Résines vinylester, fibres 600g, gelcoat et topcoat UV de qualité industrielle.</p>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES GRID -->
+<div class="services-full-grid">
+  <div class="svc-card">
+    <div class="svc-card-img"><img src="https://www.gopiscine.fr/assets/images/resource/service-1.jpg" alt="Revêtement polyester"><div class="svc-card-img-overlay"></div><div class="svc-card-num">01</div></div>
+    <div class="svc-card-body">
+      <div class="svc-card-title">Revêtement en Polyester</div>
+      <div class="svc-card-desc">Application complète sur tous supports — béton, mosaïque, liner, peinture époxy. Stratification fibre de verre 600g + gelcoat finition. Résultat : bassin comme neuf, garanti étanche.</div>
+      <div class="svc-tag">→ Solution durable 15–20 ans</div>
+    </div>
+  </div>
+  <div class="svc-card">
+    <div class="svc-card-img"><img src="https://www.gopiscine.fr/assets/images/resource/service-4.jpg" alt="Traitement osmose"><div class="svc-card-img-overlay"></div><div class="svc-card-num">02</div></div>
+    <div class="svc-card-body">
+      <div class="svc-card-title">Traitement de l'Osmose</div>
+      <div class="svc-card-desc">Détection des cloques, ponçage profond, assèchement complet, reprise à la résine vinylester. Élimine définitivement le problème d'osmose sans risque de récidive.</div>
+      <div class="svc-tag">→ Résine vinylester anti-osmose</div>
+    </div>
+  </div>
+  <div class="svc-card">
+    <div class="svc-card-img"><img src="https://www.gopiscine.fr/assets/images/resource/service-3.jpg" alt="Réparation fissures"><div class="svc-card-img-overlay"></div><div class="svc-card-num">03</div></div>
+    <div class="svc-card-body">
+      <div class="svc-card-title">Réparation de Fissures Structurelles</div>
+      <div class="svc-card-desc">Saignée, nettoyage, comblement avec mortier fibré et ponçage à niveau. Stratification locale pour renforcement structurel. Aucune perte d'eau possible après intervention.</div>
+      <div class="svc-tag">→ Étanchéité structurelle garantie</div>
+    </div>
+  </div>
+  <div class="svc-card">
+    <div class="svc-card-img"><img src="https://www.gopiscine.fr/assets/images/resource/service-10.jpg" alt="Étanchéité bassin"><div class="svc-card-img-overlay"></div><div class="svc-card-num">04</div></div>
+    <div class="svc-card-body">
+      <div class="svc-card-title">Étanchéité Complète du Bassin</div>
+      <div class="svc-card-desc">Application du système complet vinylester + stratification + gelcoat + topcoat UV. Le bassin est rendu parfaitement étanche de la plage jusqu'au fond, avec une finition miroir irréprochable.</div>
+      <div class="svc-tag">→ Système complet 6 couches</div>
+    </div>
+  </div>
+  <div class="svc-card">
+    <div class="svc-card-img"><img src="https://www.gopiscine.fr/assets/images/resource/service-8.jpg" alt="Réparation fuites"><div class="svc-card-img-overlay"></div><div class="svc-card-num">05</div></div>
+    <div class="svc-card-body">
+      <div class="svc-card-title">Réparation de Fuites</div>
+      <div class="svc-card-desc">Détection précise de l'origine des fuites (paroi, canalisations, skimmer, bonde de fond). Réparation ciblée et durable. Suivi post-intervention pour vérification de l'étanchéité.</div>
+      <div class="svc-tag">→ Diagnostic précis inclus</div>
+    </div>
+  </div>
+  <div class="svc-card">
+    <div class="svc-card-img"><img src="https://www.gopiscine.fr/assets/images/resource/service-2.jpg" alt="Modification piscine"><div class="svc-card-img-overlay"></div><div class="svc-card-num">06</div></div>
+    <div class="svc-card-body">
+      <div class="svc-card-title">Modification &amp; Personnalisation</div>
+      <div class="svc-card-desc">Réduction de la profondeur, ajout d'escaliers intégrés, création de banquettes, modification de la plage. Chaque modification est réalisée avec reprise complète de l'étanchéité.</div>
+      <div class="svc-tag">→ Sur-mesure selon vos besoins</div>
+    </div>
+  </div>
+</div>
+
+<!-- PROCESS -->
+<section class="process-wrap">
+  <div class="section-header" style="display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:end;margin-bottom:64px;">
+    <div>
+      <div class="section-tag gold">Notre méthode</div>
+      <h2 class="display white">Le process en<br>6 étapes précises</h2>
+    </div>
+    <p class="lead white">Ce protocole est appliqué à chaque intervention, sans raccourci. C'est ce qui nous différencie d'une réparation express.</p>
+  </div>
+  <div class="process-line">
+    <div class="process-item"><div class="process-num">1</div><div class="process-title">Diagnostic précis</div><div class="process-desc">Inspection visuelle et tactile complète, identification des zones fragilisées.</div></div>
+    <div class="process-item"><div class="process-num">2</div><div class="process-title">Préparation totale</div><div class="process-desc">Ponçage mécanique + dégraissage à l'acétone. Aucune couche ne tient sur un support mal préparé.</div></div>
+    <div class="process-item"><div class="process-num">3</div><div class="process-title">Accrochage vinylester</div><div class="process-desc">Résine vinylester haute performance — barrière anti-osmose et adhérence maximale.</div></div>
+    <div class="process-item"><div class="process-num">4</div><div class="process-title">Stratification fibre 600g</div><div class="process-desc">Mat fibre de verre 600g en couches croisées — résistance mécanique et imperméabilité.</div></div>
+    <div class="process-item"><div class="process-num">5</div><div class="process-title">Gelcoat + topcoat</div><div class="process-desc">Finition gelcoat poncée miroir + topcoat UV. Résistance aux produits chimiques garantie.</div></div>
+    <div class="process-item"><div class="process-num">6</div><div class="process-title">Contrôle + remise en eau</div><div class="process-desc">Vérification complète de l'étanchéité avant validation et remise en eau du bassin.</div></div>
+  </div>
+</section>
+
+<!-- WHY -->
+<section class="why-grid">
+  <div>
+    <div class="section-tag">Pourquoi GoPiscine</div>
+    <h2 class="display">Pas le moins cher —<br>le plus <em>fiable</em></h2>
+    <div class="why-list">
+      <div class="why-item"><div class="why-num">01</div><div><div class="why-item-title">Matériaux industriels, pas grande surface</div><div class="why-item-desc">Nous utilisons uniquement des résines, fibres et gelcoats professionnels — les mêmes que les fabricants de bateaux.</div></div></div>
+      <div class="why-item"><div class="why-num">02</div><div><div class="why-item-title">Intervention personnelle, sans sous-traitance</div><div class="why-item-desc">Adel intervient lui-même sur chaque chantier. Vous savez toujours qui travaille chez vous.</div></div></div>
+      <div class="why-item"><div class="why-num">03</div><div><div class="why-item-title">Devis honnête, sans mauvaises surprises</div><div class="why-item-desc">Le diagnostic complet est réalisé avant tout devis. Pas de découverte en cours de chantier.</div></div></div>
+      <div class="why-item"><div class="why-num">04</div><div><div class="why-item-title">Disponibilité et réactivité locale</div><div class="why-item-desc">Basé à Nice, nous intervenons rapidement sur tout le 06 et le 83.</div></div></div>
+    </div>
+  </div>
+  <div class="why-img">
+    <img src="https://www.gopiscine.fr/assets/images/gallery/gallery-14.jpg" alt="Piscine rénovée GoPiscine">
+  </div>
+</section>
+
+<div class="urgence-band">
+  <div>
+    <div class="urgence-band-tag">Saison 2025 — disponibilités limitées</div>
+    <h2>Planning rapidement complet<br>en haute saison</h2>
+    <p>Contactez-nous maintenant pour réserver votre créneau avant l'été.</p>
+  </div>
+  <a href="tel:+33615829247" class="btn btn-navy">Réserver mon créneau →</a>
+</div>
+
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand"><a href="index.html" class="logo">Go<span>Piscine</span></a><p>Spécialiste rénovation haut de gamme de piscines à Nice et sur toute la Côte d'Azur depuis plus de 10 ans.</p></div>
+    <div class="footer-col"><h4>Navigation</h4><a href="index.html">Accueil</a><a href="about.html">À propos</a><a href="services.html">Services</a><a href="gallery.html">Galerie</a><a href="contact.html">Contact</a></div>
+    <div class="footer-col"><h4>Services</h4><a href="services.html">Revêtement polyester</a><a href="services.html">Traitement osmose</a><a href="services.html">Réparation fissures</a><a href="services.html">Étanchéité bassin</a><a href="services.html">Réparation fuites</a></div>
+    <div class="footer-col"><h4>Contact</h4><a href="tel:+33615829247">+33 06 15 82 92 47</a><a href="mailto:saber.mekki6@gmail.com">saber.mekki6@gmail.com</a><p>11 Rue Eugène Coste<br>Le Manoir C7 · Nice</p></div>
+  </div>
+  <div class="footer-bottom"><p>© 2025 GoPiscine — Tous droits réservés</p><p>Rénovation &amp; réparation de piscines · Nice · Côte d'Azur</p></div>
+</footer>
+</body>
+</html>
