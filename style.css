@@ -70,7 +70,16 @@ nav {
   white-space: nowrap;
 }
 .nav-links a:hover, .nav-links a.active { color: var(--gold); border-bottom-color: var(--gold); }
-.nav-phone { color: var(--azure-light) !important; font-size: 13px !important; letter-spacing: 0.02em !important; border-bottom: none !important; }
+.nav-links, .nav-links * { list-style: none; }
+.nav-links a::before, .nav-links a::after { content: none !important; display: none !important; }
+.nav-links a.nav-phone,
+.nav-links a.nav-phone:link,
+.nav-links a.nav-phone:visited { color: var(--white) !important; -webkit-text-fill-color: var(--white); text-decoration: none !important; font-size: 13px !important; letter-spacing: 0.02em !important; border-bottom: none !important; }
+.nav-links a.nav-phone:hover,
+.nav-links a.nav-phone:focus { color: var(--gold) !important; -webkit-text-fill-color: var(--gold); }
+a[href^="tel"] { text-decoration: none; }
+a[x-apple-data-detectors] { color: inherit !important; text-decoration: none !important; }
+@media (max-width: 1280px) and (min-width: 1025px) { nav { padding: 0 24px; } .nav-links a { padding: 0 10px; } }
 .nav-wa {
   background: #25D366 !important;
   color: #fff !important;

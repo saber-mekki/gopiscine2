@@ -11,6 +11,7 @@
 <meta name="geo.region" content="FR-06">
 <meta name="geo.placename" content="Nice">
 <meta name="geo.position" content="43.7102;7.2620">
+<meta name="format-detection" content="telephone=no">
 <link rel="canonical" href="https://gopiscine.fr/">
 
 <!-- Open Graph (partage réseaux sociaux) -->
@@ -94,6 +95,12 @@
   .full-bg { height:360px; }
   .full-bg-content h2 { font-size:30px; }
 }
+/* FUITE BAND RESPONSIVE */
+@media (max-width:900px) {
+  .fuite-band-grid { grid-template-columns:1fr !important; }
+  .fuite-band-img { min-height:220px !important; }
+  .fuite-band-text { padding:40px 24px !important; }
+}
 </style>
 <script type="application/ld+json">
 {
@@ -162,9 +169,10 @@
   </a>
   <div class="nav-links">
     <a href="index.html" class="active">Accueil</a>
-    <a href="about.html">À propos</a>
     <a href="services.html">Services</a>
-    <a href="gallery.html">Galerie</a>
+    <a href="fuite.html">Recherche de Fuite</a>
+    <a href="gallery.html">Réalisations</a>
+    <a href="about.html">À propos</a>
     <a href="contact.html">Contact</a>
     <a href="tel:+33615829247" class="nav-phone">+33 06 15 82 92 47</a>
     <a href="https://wa.me/33615829247" target="_blank" class="nav-wa"><svg width="14" height="14" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>WhatsApp</a>
@@ -174,9 +182,10 @@
 <div class="nav-overlay" id="navOverlay"></div>
 <div class="nav-mobile" id="navMobile">
   <a href="index.html">Accueil</a>
-  <a href="about.html">À propos</a>
   <a href="services.html">Services</a>
-  <a href="gallery.html">Galerie</a>
+  <a href="fuite.html">Recherche de Fuite</a>
+  <a href="gallery.html">Réalisations</a>
+  <a href="about.html">À propos</a>
   <a href="contact.html">Contact</a>
   <a href="tel:+33615829247">📞 +33 06 15 82 92 47</a>
   <a href="https://wa.me/33615829247" target="_blank" class="wa-mobile">💬 WhatsApp</a>
@@ -228,6 +237,34 @@
   <path d="M0 40L60 32C120 24 240 8 360 4C480 0 600 8 720 16C840 24 960 28 1080 24C1200 20 1320 8 1380 4L1440 0V40H0Z" fill="#f0ede6"/>
 </svg>
 
+<!-- RECHERCHE DE FUITE BAND -->
+<section style="background:var(--navy-mid);padding:0;">
+  <div class="fuite-band-grid" style="display:grid;grid-template-columns:1fr 1fr;min-height:320px;">
+    <div class="fuite-band-img" style="position:relative;overflow:hidden;">
+      <img src="img/p7.jpeg" alt="Recherche de fuite piscine Nice" style="width:100%;height:100%;object-fit:cover;display:block;filter:brightness(0.6);">
+      <div style="position:absolute;inset:0;background:linear-gradient(to right,rgba(7,16,31,0.4) 0%,transparent 100%);"></div>
+      <div style="position:absolute;top:28px;left:28px;background:rgba(201,169,110,0.15);border:1px solid rgba(201,169,110,0.4);padding:6px 14px;border-radius:2px;">
+        <span style="color:var(--gold);font-size:11px;letter-spacing:.12em;text-transform:uppercase;font-family:'DM Sans',sans-serif;">Nouveau service</span>
+      </div>
+    </div>
+    <div class="fuite-band-text" style="padding:52px 56px;display:flex;flex-direction:column;justify-content:center;gap:20px;">
+      <div style="color:var(--gold);font-size:11px;letter-spacing:.15em;text-transform:uppercase;font-family:'DM Sans',sans-serif;">Diagnostic &amp; Localisation</div>
+      <h2 style="font-family:'Cormorant Garamond',serif;font-size:36px;color:var(--white);font-weight:500;line-height:1.15;margin:0;">Votre piscine <em>perd de l'eau ?</em></h2>
+      <p style="color:rgba(248,246,242,0.65);font-size:15px;line-height:1.75;margin:0;">GoPiscine localise la fuite sans destruction inutile — inspection caméra, test de pression, colorimétrie. Diagnostic précis avant toute réparation.</p>
+      <ul style="color:rgba(248,246,242,0.55);font-size:13px;line-height:1.9;padding-left:18px;margin:0;">
+        <li>Skimmer, refoulements, bonde de fond, projecteurs</li>
+        <li>Canalisations enterrées — inspection vidéo par caméra</li>
+        <li>Recherche de fuite après compteur</li>
+        <li>Test de pression — contrôle d'étanchéité</li>
+      </ul>
+      <div style="display:flex;gap:14px;flex-wrap:wrap;margin-top:8px;">
+        <a href="fuite.html" class="btn btn-gold" style="font-size:14px;">Voir le service complet →</a>
+        <a href="tel:+33615829247" class="btn btn-navy" style="font-size:14px;border:1px solid rgba(255,255,255,0.2);">📞 Appeler pour un diagnostic</a>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- IMPACT -->
 <section class="impact-band">
   <div class="impact-text">
@@ -243,6 +280,7 @@
     <img src="img/p1.jpeg" alt="Réalisation GoPiscine — piscine eau turquoise">
   </div>
 </section>
+
 
 <!-- SERVICES -->
 <section class="services-wrap">
@@ -283,6 +321,7 @@
     <a href="services.html" class="btn btn-water">Voir tous nos services →</a>
   </div>
 </section>
+
 
 <!-- GRANDE IMAGE -->
 <div class="full-bg">
@@ -423,8 +462,8 @@
       <a href="index.html" class="logo">Go<span>Piscine</span></a>
       <p>SASU spécialiste rénovation piscines polyester. Nice &amp; Côte d'Azur depuis 2014. Étanchéité · Fibre · Gelcoat · Fissures.</p>
     </div>
-    <div class="footer-col"><h4>Navigation</h4><a href="index.html">Accueil</a><a href="about.html">À propos</a><a href="services.html">Services</a><a href="gallery.html">Galerie</a><a href="contact.html">Contact</a></div>
-    <div class="footer-col"><h4>Spécialités</h4><a href="services.html">Rénovation polyester</a><a href="services.html">Traitement osmose</a><a href="services.html">Réparation fissures</a><a href="services.html">Étanchéité bassin</a><a href="services.html">Réparation fuites</a></div>
+    <div class="footer-col"><h4>Navigation</h4><a href="index.html">Accueil</a><a href="services.html">Services</a><a href="fuite.html">Recherche de Fuite</a><a href="gallery.html">Réalisations</a><a href="about.html">À propos</a><a href="contact.html">Contact</a></div>
+    <div class="footer-col"><h4>Spécialités</h4><a href="services.html">Rénovation polyester</a><a href="services.html">Traitement osmose</a><a href="services.html">Réparation fissures</a><a href="services.html">Étanchéité bassin</a><a href="fuite.html">Recherche de fuite</a></div>
     <div class="footer-col"><h4>Contact direct</h4><a href="tel:+33615829247">+33 06 15 82 92 47</a><a href="https://wa.me/33615829247">WhatsApp</a><a href="mailto:gopiscine06@gmail.com">gopiscine06@gmail.com</a><p>11 Rue Eugène Coste · Nice</p><p>Alpes-Maritimes (06) &amp; Var (83)</p></div>
   </div>
   <div class="footer-bottom">
